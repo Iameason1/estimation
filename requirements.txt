@@ -40,6 +40,9 @@ python-dateutil==2.9.0.post0
 pytz==2025.1
     # via pandas
 seaborn==0.13.2
+
+scikit-learn-intelex==2021.20221004.171935
+scipy==1.9.1
     # via -r requirements.in
 six==1.17.0
     # via python-dateutil
