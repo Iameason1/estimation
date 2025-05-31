@@ -12,31 +12,4 @@ matplotlib>=3.4
 seaborn>=0.11
 joblib>=1.0
 
-# Optional: For data processing and feature engineering
-category_encoders>=2.5
-imbalanced-learn>=0.9
 
-# Optional: For model evaluation and selection
-xgboost>=1.5
-lightgbm>=3.3
-
-# Optional: For parallel processing
-threadpoolctl>=3.0
-dask[complete]>=2022.8
-
-# Optional: For deep learning (if needed)
-tensorflow>=2.6
-keras>=2.6
-pytorch>=1.10
-torchvision>=0.11
-
-# Optional: For Jupyter notebooks and interactive visualization
-jupyterlab>=3.0
-plotly>=5.0
-bokeh>=2.4
-
-# Optional: For documentation and testing
-sphinx>=4.0
-pytest>=6.0
-flake8>=3.9
-black>=21.12b0
