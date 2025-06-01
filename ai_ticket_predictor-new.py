@@ -66,9 +66,9 @@ def page1():
     df_conv = pd.DataFrame({"价格": prices, "预估销量": sales})
     fig2, ax2 = plt.subplots()
     sns.lineplot(x="价格", y="预估销量", data=df_conv, marker="o", ax=ax2)
-    ax2.set_title("票价变动对销量的影响", fontproperties=font_prop)
+    ax2.set_title("票价变动对销量的影响")
     st.pyplot(fig2)
-    #plt.legend(prop=prop)
+    #plt.legend(prop=prop)    
 
     # ---------- 多项目对比图 ----------
     st.subheader("🔁 多项目票房对比")
