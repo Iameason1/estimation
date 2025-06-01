@@ -127,7 +127,7 @@ def page2():
     marketing_spend = st.sidebar.number_input("营销预算总额 (¥)", 0, 100000, 20000)
     roi_target = st.sidebar.slider("目标 ROI", 0.0, 1.0, 0.1)
 
-    # 模拟数据 (价格 vs 销量)
+    # 模拟数据 (Ticket price vs 销量)
     price_range = np.linspace(30, 130, 100).reshape(-1, 1)
     true_coeff = -5  # 模拟价格弹性
     true_intercept = 800
@@ -150,14 +150,14 @@ def page2():
     ax1.plot(price_range, roi, label="ROI", color="green")
     ax1.axhline(y=roi_target, color="red", linestyle="--", label=f"目标 ROI: {roi_target:.2f}")
     ax1.set_ylabel("ROI")
-    ax1.set_title("票价 vs ROI 曲线")
+    ax1.set_title("Ticket price vs ROI")
     ax1.legend()
     ax1.grid(True)
 
     ax2.plot(price_range, predicted_sales, label="预测销量", color="blue")
-    ax2.set_xlabel("票价 ")
-    ax2.set_ylabel("销量")
-    ax2.set_title("票价 vs 销量 曲线")
+    ax2.set_xlabel("Ticket price")
+    ax2.set_ylabel("Sales")
+    ax2.set_title("Ticket price vs Sales")
     ax2.grid(True)
 
     st.pyplot(fig)
@@ -198,8 +198,8 @@ def page2():
     st.download_button("📥 下载数据 (CSV)", data=df_export.to_csv(index=False), file_name="roi_price_sales_curve.csv")
 
 def page3():
-    st.title("Page 3")
-    st.write("这是第三页的内容")
+    st.title("票种分析")
+    #st.write("这是第三页的内容")
 
 
     st.sidebar.header("🌦️ 情境选择")
@@ -250,7 +250,7 @@ def page3():
     project_name = st.sidebar.text_input("项目名称", "项目 A")
 
     # ---------- 基础票种设定 ----------
-    ticket_types = ["Z1 早鸟票", "C1 单人票", "C2 双人票", "C3 亲子票", "S1 优待票"]
+    ticket_types = [" 早鸟票", "C1 单人票", "C2 双人票", "C3 亲子票", "S1 优待票"]
     ticket_prices = {
         "Z1 早鸟票": st.sidebar.number_input("Z1 早鸟票价格", 10, 200, 39),
         "C1 单人票": st.sidebar.number_input("C1 单人票价格", 10, 200, 69),
