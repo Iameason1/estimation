@@ -53,7 +53,7 @@ def page1():
     })
     st.dataframe(df_visitors, use_container_width=True)
     fig1, ax1 = plt.subplots()
-    sns.barplot(data=df_visitors, x="类型", y="人数", palette="coolwarm", ax=ax1, fontproperties=font_prop)
+    sns.barplot(data=df_visitors, x="类型", y="人数", palette="coolwarm", ax=ax1)
     st.pyplot(fig1)
     #plt.legend(prop=prop)
 
@@ -66,7 +66,7 @@ def page1():
     df_conv = pd.DataFrame({"价格": prices, "预估销量": sales})
     fig2, ax2 = plt.subplots()
     sns.lineplot(x="价格", y="预估销量", data=df_conv, marker="o", ax=ax2)
-    ax2.set_title("票价变动对销量的影响")
+    ax2.set_title("票价变动对销量的影响",fontproperties=font_prop)
     st.pyplot(fig2)
     #plt.legend(prop=prop)
 
