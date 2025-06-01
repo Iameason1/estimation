@@ -53,7 +53,9 @@ def page1():
     })
     st.dataframe(df_visitors, use_container_width=True)
     fig1, ax1 = plt.subplots()
+    ax.set_xlabel('类型')
     sns.barplot(data=df_visitors, x="Category", y="Visitors", palette="coolwarm", ax=ax1)
+    
     st.pyplot(fig1)
     #plt.legend(prop=prop)
 
