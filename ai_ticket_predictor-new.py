@@ -315,7 +315,7 @@ def page3():
     ticket_types = ["Z1", "C1 单人票", "C2 双人票", "C3 亲子票", "S1 优待票"]
     st.subheader("📤 图表导出")
     fig, ax = plt.subplots(figsize=(6, 6))
-    ax.pie(df.iloc[:-1][f"{project_name} 预测收入"], labels=["Z1", "C1 单人票", "C2 双人票", "C3 亲子票", "S1 优待票"], autopct="%1.1f%%", startangle=90)
+    ax.pie(df.iloc[:-1][f"{project_name} 预测收入"], labels=["Z1", "C1", "C2", "C3", "S1"], autopct="%1.1f%%", startangle=90)
     ax.axis('equal')
     st.pyplot(fig)
 
