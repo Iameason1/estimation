@@ -11,8 +11,10 @@ import requests
 st.set_page_config(page_title="TICKET MIND 票知", layout="wide")
 
 # 设置中文字体
-#font_path = 'fonts/simhei.ttf'
-#font_prop = FontProperties(fname=font_path)
+mpl.font_manager.fontManager.addfont('fronts/SimHei.ttf') #临时注册新的全局字体
+
+plt.rcParams['font.sans-serif']=['SimHei'] #用来正常显示中文标签
+
 #plt.rcParams['font.sans-serif'] = ['SimHei']  # 使用黑体显示中文
 #matplotlib.rcParams['axes.unicode_minus'] = False    # 解决负号显示问题
 
@@ -44,7 +46,7 @@ def page1():
     total_visitors = total_weekday_visitors + total_weekend_visitors
 
     df_visitors = pd.DataFrame({
-        "类型": ["票知", "周末客流量", "总客流量"],
+        "类型": ["平日客流量", "周末客流量", "总客流量"],
         "人数": [total_weekday_visitors, total_weekend_visitors, total_visitors]
     })
     st.dataframe(df_visitors, use_container_width=True)
