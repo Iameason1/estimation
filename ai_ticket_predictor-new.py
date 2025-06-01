@@ -312,7 +312,7 @@ def page3():
     st.bar_chart(df.set_index("票种").iloc[:-1])
 
     # ---------- 图表导出 ----------
-    ticket_types = ["Z1 早鸟票", "C1 单人票", "C2 双人票", "C3 亲子票", "S1 优待票"]
+    ticket_types = ["Z1", "C1 单人票", "C2 双人票", "C3 亲子票", "S1 优待票"]
     st.subheader("📤 图表导出")
     fig, ax = plt.subplots(figsize=(6, 6))
     ax.pie(df.iloc[:-1][f"{project_name} 预测收入"], labels=df.iloc[:-1]["票种"], autopct="%1.1f%%", startangle=90)
