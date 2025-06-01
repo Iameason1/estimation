@@ -11,9 +11,9 @@ import requests
 st.set_page_config(page_title="TICKET MIND 票知", layout="wide")
 
 # 设置中文字体
-# matplotlib.font_manager.fontManager.addfont('fronts/SimHei.ttf') #临时注册新的全局字体
-font_path = 'fonts/simhei.ttf'
-font_prop = FontProperties(fname=font_path)
+matplotlib.font_manager.fontManager.addfont('fronts/SimHei.ttf') #临时注册新的全局字体
+#font_path = 'fonts/simhei.ttf'
+#font_prop = FontProperties(fname=font_path)
 
 plt.rcParams['font.sans-serif']=['SimHei'] #用来正常显示中文标签
 
@@ -66,7 +66,7 @@ def page1():
     df_conv = pd.DataFrame({"价格": prices, "预估销量": sales})
     fig2, ax2 = plt.subplots()
     sns.lineplot(x="价格", y="预估销量", data=df_conv, marker="o", ax=ax2)
-    ax2.set_title("票价变动对销量的影响",fontproperties=font_prop)
+    ax2.set_title("票价变动对销量的影响")
     st.pyplot(fig2)
     #plt.legend(prop=prop)
 
