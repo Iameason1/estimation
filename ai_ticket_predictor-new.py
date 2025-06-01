@@ -43,8 +43,8 @@ def page1():
     weekend_days = 25
     weekday_flow = 225
     weekend_flow = 500
-    total_weekday_visitors = weekday_days * weekday_flow*city_delta
-    total_weekend_visitors = weekend_days * weekend_flow*city_delta
+    total_weekday_visitors = weekday_days * weekday_flow * city_delta
+    total_weekend_visitors = weekend_days * weekend_flow * city_delta
     total_visitors = total_weekday_visitors + total_weekend_visitors
 
     df_visitors = pd.DataFrame({
