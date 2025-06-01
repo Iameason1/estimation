@@ -12,10 +12,10 @@ st.set_page_config(page_title="TICKET MIND 票知", layout="wide")
 
 # 设置中文字体
 # matplotlib.font_manager.fontManager.addfont('fronts/Simhei.ttf') #临时注册新的全局字体
-font_path = 'fronts/simhei.ttf'
-font_prop = FontProperties(fname=font_path)
+#font_path = 'fronts/simhei.ttf'
+#font_prop = FontProperties(fname=font_path)
 
-plt.rcParams['font.sans-serif']=['SimHei'] #用来正常显示中文标签
+#plt.rcParams['font.sans-serif']=['SimHei'] #用来正常显示中文标签
 
 #plt.rcParams['font.sans-serif'] = ['SimHei']  # 使用黑体显示中文
 #matplotlib.rcParams['axes.unicode_minus'] = False    # 解决负号显示问题
