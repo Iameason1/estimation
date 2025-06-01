@@ -5,13 +5,17 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.linear_model import LinearRegression
 import matplotlib
+from matplotlib import font_manager
 import requests
 
 st.set_page_config(page_title="TICKET MIND 票知", layout="wide")
 
 # 设置中文字体
-matplotlib.rcParams['font.sans-serif'] = ['SimHei']  # 使用黑体显示中文
-matplotlib.rcParams['axes.unicode_minus'] = False    # 解决负号显示问题
+# matplotlib.rcParams['font.sans-serif'] = ['SimHei']  # 使用黑体显示中文
+# matplotlib.rcParams['axes.unicode_minus'] = False    # 解决负号显示问题
+
+font_path = 'simhei.ttf'  # 确保你的环境中有一个中文字体文件，例如 simhei.ttf
+prop = font_manager.FontProperties(fname=font_path)
 
 # 定义页面函数
 def page1():
@@ -45,6 +49,7 @@ def page1():
     fig1, ax1 = plt.subplots()
     sns.barplot(data=df_visitors, x="类型", y="人数", palette="coolwarm", ax=ax1)
     st.pyplot(fig1)
+    plt.legend(prop=prop)
 
     # ---------- 销量 vs 价格 关联图 ----------
     st.subheader("📉 销量-价格回归模拟")
@@ -57,6 +62,7 @@ def page1():
     sns.lineplot(x="价格", y="预估销量", data=df_conv, marker="o", ax=ax2)
     ax2.set_title("票价变动对销量的影响")
     st.pyplot(fig2)
+    plt.legend(prop=prop)
 
     # ---------- 多项目对比图 ----------
     st.subheader("🔁 多项目票房对比")
