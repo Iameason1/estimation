@@ -55,7 +55,6 @@ def page1():
     fig1, ax1 = plt.subplots()
     ax1.set_xlabel('Category')
     ax1.set_ylabel('Visitors')
-    ax1.set_xticklabels(Category)
     sns.barplot(data=df_visitors, x="Category", y="Visitors", palette="coolwarm", ax=ax1)
     
     st.pyplot(fig1)
