@@ -25,8 +25,8 @@ st.set_page_config(page_title="TICKET MIND 票知", layout="wide")
 
 # 定义页面函数
 def page1():
-    st.title("Page 1")
-    st.write("这是第一页的内容")
+    st.title("客流分析")
+    #st.write("这是第一页的内容")
 
     # ---------- 参数设置 ----------
     city_options = ["北京", "苏州", "成都"]
@@ -69,13 +69,15 @@ def page1():
     df_conv = pd.DataFrame({"价格": prices, "预估销量": sales})
     fig2, ax2 = plt.subplots()
     sns.lineplot(x="价格", y="预估销量", data=df_conv, marker="o", ax=ax2)
-    ax2.set_title("票价变动对销量的影响")
+    #ax2.set_title("Influence of price change on ticket sold")
+    ax2.set_xlabel('Price')
+    ax2.set_ylabel('Estimated sales')
     st.pyplot(fig2)
     #plt.legend(prop=prop)    
 
     # ---------- 多项目对比图 ----------
     st.subheader("🔁 多项目票房对比")
-    projects = ["北京展", "苏州展", "成都展"]
+    projects = ["Beijing", "Suzhou", "Chengdu"]
     incomes = [500000, 320000, 280000]
     flows = [28000, 22000, 19000]
     df_compare = pd.DataFrame({
@@ -91,11 +93,15 @@ def page1():
         st.metric("成都票房", "¥280,000")
     with col2:
         fig3, ax3 = plt.subplots()
+        ax3.set_xlabel('Projects')
+        ax3.set_ylabel('Incomes')
         sns.barplot(data=df_compare, x="项目", y="票房收入", ax=ax3)
         st.pyplot(fig3)
 
     fig4, ax4 = plt.subplots()
     sns.barplot(data=df_compare, x="项目", y="总客流", palette="Greens", ax=ax4)
+    ax4.set_xlabel('Projects')
+    ax4.set_ylabel('Flows')
     st.pyplot(fig4)
 
     # ---------- 智能报告导出 ----------
@@ -108,8 +114,8 @@ def page1():
 
 
 def page2():
-    st.title("Page 2")
-    st.write("这是第二页的内容")
+    st.title("ROI分析")
+    #st.write("这是第二页的内容")
 
     # ----------------------------
     # 用户输入
