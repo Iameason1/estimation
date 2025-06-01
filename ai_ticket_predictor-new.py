@@ -11,7 +11,7 @@ import requests
 st.set_page_config(page_title="TICKET MIND 票知", layout="wide")
 
 # 设置中文字体
-# matplotlib.font_manager.fontManager.addfont('fronts/SimHei.ttf') #临时注册新的全局字体
+matplotlib.font_manager.fontManager.addfont('fronts/SimHei.ttf') #临时注册新的全局字体
 font_path = 'fonts/simhei.ttf'
 font_prop = FontProperties(fname=font_path)
 
@@ -53,7 +53,7 @@ def page1():
     })
     st.dataframe(df_visitors, use_container_width=True)
     fig1, ax1 = plt.subplots()
-    sns.barplot(data=df_visitors, x="类型", y="人数", palette="coolwarm", ax=ax1)
+    sns.barplot(data=df_visitors, x="类型", y="人数", palette="coolwarm", ax=ax1, fontproperties=font_prop)
     st.pyplot(fig1)
     #plt.legend(prop=prop)
 
