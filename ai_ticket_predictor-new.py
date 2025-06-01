@@ -102,7 +102,7 @@ def page1():
     ax3.set_xlabel('Projects')
     ax3.set_ylabel('Incomes')
     sns.barplot(data=df_compare, x="项目", y="票房收入", ax=ax3)
-    t.pyplot(fig3)
+    st.pyplot(fig3)
 
     fig4, ax4 = plt.subplots()
     sns.barplot(data=df_compare, x="项目", y="总客流", palette="Greens", ax=ax4)
