@@ -92,17 +92,17 @@ def page1():
         "总客流": flows
     })
 
-    col1, col2 = st.columns(2)
-    with col1:
-        st.metric("北京票房", "¥500,000")
-        st.metric("苏州票房", "¥320,000")
-        st.metric("成都票房", "¥280,000")
-    with col2:
-        fig3, ax3 = plt.subplots()
-        ax3.set_xlabel('Projects')
-        ax3.set_ylabel('Incomes')
-        sns.barplot(data=df_compare, x="项目", y="票房收入", ax=ax3)
-        st.pyplot(fig3)
+    #col1, col2 = st.columns(2)
+    #with col1:
+     #   st.metric("北京票房", "¥500,000")
+    #    st.metric("苏州票房", "¥320,000")
+    #    st.metric("成都票房", "¥280,000")
+    #with col2:
+    fig3, ax3 = plt.subplots()
+    ax3.set_xlabel('Projects')
+    ax3.set_ylabel('Incomes')
+    sns.barplot(data=df_compare, x="项目", y="票房收入", ax=ax3)
+    t.pyplot(fig3)
 
     fig4, ax4 = plt.subplots()
     sns.barplot(data=df_compare, x="项目", y="总客流", palette="Greens", ax=ax4)
