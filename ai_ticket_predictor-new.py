@@ -250,9 +250,9 @@ def page3():
     project_name = st.sidebar.text_input("项目名称", "项目 A")
 
     # ---------- 基础票种设定 ----------
-    ticket_types = [" 早鸟票", "C1 单人票", "C2 双人票", "C3 亲子票", "S1 优待票"]
+    ticket_types = ["Z1 早鸟票", "C1 单人票", "C2 双人票", "C3 亲子票", "S1 优待票"]
     ticket_prices = {
-        " 早鸟票": st.sidebar.number_input(" 早鸟票价格", 10, 200, 39),
+        "Z1 早鸟票": st.sidebar.number_input("Z1 早鸟票价格", 10, 200, 39),
         "C1 单人票": st.sidebar.number_input("C1 单人票价格", 10, 200, 69),
         "C2 双人票": st.sidebar.number_input("C2 双人票价格", 10, 200, 99),
         "C3 亲子票": st.sidebar.number_input("C3 亲子票价格", 10, 200, 90),
@@ -289,7 +289,7 @@ def page3():
         price = ticket_prices[ticket]
         ratio = ticket_ratios[ticket]
 
-        if ticket == " 早鸟票" and fixed_earlybird:
+        if ticket == "Z1 早鸟票" and fixed_earlybird:
             income = price * fixed_earlybird_qty
             results.append((ticket, income))
             total_income += income
@@ -310,9 +310,10 @@ def page3():
     st.bar_chart(df.set_index("票种").iloc[:-1])
 
     # ---------- 图表导出 ----------
+    票种类= ["Z1 早鸟票", "C1 单人票", "C2 双人票", "C3 亲子票", "S1 优待票"]
     st.subheader("📤 图表导出")
     fig, ax = plt.subplots(figsize=(6, 6))
-    ax.pie(df.iloc[:-1][f"{project_name} 预测收入"], labels=df.iloc[:-1]["票种"], autopct="%1.1f%%", startangle=90)
+    ax.pie(df.iloc[:-1][f"{project_name} 预测收入"], labels=df.iloc[:-1]["票种类"], autopct="%1.1f%%", startangle=90)
     ax.axis('equal')
     st.pyplot(fig)
 
