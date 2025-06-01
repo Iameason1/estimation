@@ -43,17 +43,17 @@ def page1():
     weekend_days = 25
     weekday_flow = 225
     weekend_flow = 500
-    total_weekday_visitors = weekday_days * weekday_flow
-    total_weekend_visitors = weekend_days * weekend_flow
+    total_weekday_visitors = weekday_days * weekday_flow*city_delta
+    total_weekend_visitors = weekend_days * weekend_flow*city_delta
     total_visitors = total_weekday_visitors + total_weekend_visitors
 
     df_visitors = pd.DataFrame({
-        "类型": ["平日客流量", "周末客流量", "总客流量"],
-        "人数": [total_weekday_visitors, total_weekend_visitors, total_visitors]
+        "Category": ["total_weekday_visitors", "total_weekend_visitors", "total_visitors"],
+        "Visitors": [total_weekday_visitors, total_weekend_visitors, total_visitors]
     })
     st.dataframe(df_visitors, use_container_width=True)
     fig1, ax1 = plt.subplots()
-    sns.barplot(data=df_visitors, x="类型", y="人数", palette="coolwarm", ax=ax1)
+    sns.barplot(data=df_visitors, x="Category", y="Visitors", palette="coolwarm", ax=ax1)
     st.pyplot(fig1)
     #plt.legend(prop=prop)
 
