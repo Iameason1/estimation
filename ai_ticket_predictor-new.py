@@ -252,7 +252,7 @@ def page3():
     # ---------- 基础票种设定 ----------
     ticket_types = [" 早鸟票", "C1 单人票", "C2 双人票", "C3 亲子票", "S1 优待票"]
     ticket_prices = {
-        "Z1 早鸟票": st.sidebar.number_input("Z1 早鸟票价格", 10, 200, 39),
+        "Z1 早鸟票": st.sidebar.number_input(" 早鸟票价格", 10, 200, 39),
         "C1 单人票": st.sidebar.number_input("C1 单人票价格", 10, 200, 69),
         "C2 双人票": st.sidebar.number_input("C2 双人票价格", 10, 200, 99),
         "C3 亲子票": st.sidebar.number_input("C3 亲子票价格", 10, 200, 90),
@@ -289,7 +289,7 @@ def page3():
         price = ticket_prices[ticket]
         ratio = ticket_ratios[ticket]
 
-        if ticket == "Z1 早鸟票" and fixed_earlybird:
+        if ticket == " 早鸟票" and fixed_earlybird:
             income = price * fixed_earlybird_qty
             results.append((ticket, income))
             total_income += income
