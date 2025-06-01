@@ -79,12 +79,13 @@ def page1():
 
     # ---------- 多项目对比图 ----------
     st.subheader("🔁 多项目票房对比")
+    st.sidebar.header("各城市票房")
     bei = st.sidebar.number_input("北京票房", 0, 500000, 20000)
     su = st.sidebar.number_input("苏州票房", 0, 500000, 20000)
     cheng = st.sidebar.number_input("成都票房", 0, 500000, 20000)
     projects = ["Beijing", "Suzhou", "Chengdu"]
     incomes = [bei, su, cheng]
-    flows = [bei/(base_price * city_delta[北京]), 22000, 19000]
+    flows = [bei/(base_price * 1.2), su/(base_price * 1), cheng/(base_price * 0.85)]
     df_compare = pd.DataFrame({
         "项目": projects,
         "票房收入": incomes,
