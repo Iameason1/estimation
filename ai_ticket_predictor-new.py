@@ -39,10 +39,12 @@ def page1():
 
     # ---------- 客流分析 ----------
     st.subheader("👥 客流总量分析")
-    weekday_days = 85
-    weekend_days = 25
-    weekday_flow = 225
-    weekend_flow = 500
+    st.sidebar.header("🕒 展期与客流")
+    weekday_days = st.sidebar.number_input("平日天数", 0, 200, 85)
+    weekend_days = st.sidebar.number_input("周末天数", 0, 100, 25)
+    weekday_flow = st.sidebar.number_input("平日日均客流", 0, 10000, 225)
+    weekend_flow = st.sidebar.number_input("周末日均客流", 0, 10000, 500)
+
     total_weekday_visitors = (weekday_days * weekday_flow) * city_delta[selected_city]
     total_weekend_visitors = (weekend_days * weekend_flow) * city_delta[selected_city]
     total_visitors = total_weekday_visitors + total_weekend_visitors
@@ -124,7 +126,7 @@ def page2():
 
     ticket_price = st.sidebar.slider("票价 (¥)", 30, 130, 69)
     cost_per_ticket = st.sidebar.number_input("每张票成本 (¥)", 0, 100, 20)
-    marketing_spend = st.sidebar.number_input("营销预算总额 (¥)", 0, 100000, 20000)
+    marketing_spend = st.sidebar.number_input("营销预算总额 (¥)", 0, 200000, 20000)
     roi_target = st.sidebar.slider("目标 ROI", 0.0, 1.0, 0.1)
 
     # 模拟数据 (Ticket price vs 销量)
