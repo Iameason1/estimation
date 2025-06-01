@@ -53,7 +53,9 @@ def page1():
     })
     st.dataframe(df_visitors, use_container_width=True)
     fig1, ax1 = plt.subplots()
-    ax1.set_xlabel('类型')
+    ax1.set_xlabel('Category')
+    ax1.set_ylabel('Visitors')
+    ax1.set_xticks("weekday visitors", "weekend visitors", "total visitors")
     sns.barplot(data=df_visitors, x="Category", y="Visitors", palette="coolwarm", ax=ax1)
     
     st.pyplot(fig1)
