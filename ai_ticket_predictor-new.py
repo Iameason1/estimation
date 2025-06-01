@@ -5,16 +5,16 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.linear_model import LinearRegression
 import matplotlib
-from matplotlib import font_manager
+from matplotlib.font_manager import FontProperties
 import requests
 
 st.set_page_config(page_title="TICKET MIND 票知", layout="wide")
 
 # 设置中文字体
-#mpl.font_manager.fontManager.addfont('字体/SimHei.ttf')
-#matplotlib.rcParams['font.sans-serif'] = ['SimHei']  # 使用黑体显示中文
-plt.rcParams['font.sans-serif'] = ['SimHei']  # 使用黑体显示中文
-matplotlib.rcParams['axes.unicode_minus'] = False    # 解决负号显示问题
+font_path = 'fonts/simhei.ttf'
+font_prop = FontProperties(fname=font_path)
+#plt.rcParams['font.sans-serif'] = ['SimHei']  # 使用黑体显示中文
+#matplotlib.rcParams['axes.unicode_minus'] = False    # 解决负号显示问题
 
 #font_path = 'simhei.ttf'  # 确保你的环境中有一个中文字体文件，例如 simhei.ttf
 #prop = font_manager.FontProperties(fname=font_path)
