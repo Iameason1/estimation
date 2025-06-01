@@ -11,7 +11,7 @@ import requests
 st.set_page_config(page_title="TICKET MIND 票知", layout="wide")
 
 # 设置中文字体
-mpl.font_manager.fontManager.addfont('fronts/SimHei.ttf') #临时注册新的全局字体
+matplotlib.font_manager.fontManager.addfont('fronts/SimHei.ttf') #临时注册新的全局字体
 
 plt.rcParams['font.sans-serif']=['SimHei'] #用来正常显示中文标签
 
